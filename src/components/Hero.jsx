@@ -12,7 +12,7 @@ const Hero = () => {
 
     return (
         <section className="min-h-screen pt-40 pb-20 overflow-hidden relative">
-            <div className="max-w-[1300px] mx-auto grid lg:grid-cols-12 gap-16 items-center">
+            <div className="max-w-[1300px] mx-auto grid lg:grid-cols-12 gap-16 items-start">
 
                 {/* Left Column: Identity & Achievement */}
                 <div className="lg:col-span-8">
@@ -71,7 +71,7 @@ const Hero = () => {
                 </div>
 
                 {/* Right Column: Profile Picture Layout */}
-                <div className="lg:col-span-4">
+                <div className="lg:col-span-4 lg:mt-4">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
                         animate={{ opacity: 1, scale: 1, rotate: 0 }}
@@ -94,7 +94,7 @@ const Hero = () => {
                             {/* Signature Detail */}
                             <div className="absolute bottom-10 left-10 right-10 p-6 bg-slate-950/80 backdrop-blur-xl border border-white/10 rounded-2xl transform translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-700">
                                 <div className="text-xs font-black uppercase tracking-widest text-brand-secondary mb-1">
-                                    Strategic Professional
+                                    Finance Professional
                                 </div>
                                 <div className="text-white font-bold text-sm">
                                     {personalInfo.name}

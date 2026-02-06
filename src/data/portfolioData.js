@@ -2,10 +2,10 @@ export const portfolioData = {
     personalInfo: {
         name: "SOURAV SINGH",
         tagline: "Gold Medalist - MBA | Growth Strategy, Capital Markets and M&A | CFA Level 1 Candidate",
-        description: "High-performing finance professional specializing in M&A Advisory, DCF/LBO modeling, and quantitative analytics. Currently engineering sophisticated valuation workflows at FactSet for institutional investment banking clients.",
+        description: "High-performing Finance Professional specializing in Capital Markets, Valuations, M&A advisory, DCF/LBO modeling, and quantitative analytics. Currently developing advanced financial valuation and modeling workflows at FactSet for institutional investment banking clients.",
         email: "souravsk1920@gmail.com",
         phone: "+91-9832538270",
-        linkedin: "https://linkedin.com/in/sourav-singh8",
+        linkedin: "https://www.linkedin.com/in/sourav-singh08/",
         location: "Bengaluru, Karnataka",
         profilePhoto: "/profile-photo.png",
         cvPath: "/Sourav_MBA_20JAN_cv.pdf"
@@ -42,7 +42,7 @@ export const portfolioData = {
         },
         {
             company: "Air India SATS Services",
-            role: "Operations Coordinator",
+            role: "Customer Service Executive",
             location: "Bengaluru, India",
             date: "June 2022 - Feb 2023",
             achievements: [
@@ -79,6 +79,7 @@ export const portfolioData = {
             title: "Impact of ESG on Value Creation in M&A",
             subtitle: "Empirical Research | Bloomberg Terminal",
             description: "Led a quantitative study on 120 global M&A transactions, demonstrating that 'High ESG' targets command a 75% valuation premium. Developed a proprietary ESG-integration model for risk-adjusted alpha generation.",
+            downloadPath: "/projects/Dissertation_Report.pdf",
             metrics: [
                 { label: "Transactions", value: "120" },
                 { label: "Premium", value: "75%" },
@@ -90,6 +91,7 @@ export const portfolioData = {
             title: "Equity Research: IDFC FIRST Bank",
             subtitle: "Financial Modeling | Banking Sector",
             description: "Comprehensive multi-stage valuation of IDFC FIRST Bank (MCap: ₹43,806Cr). Analyzed Net Interest Margins (NIM) and CASA ratios against industry benchmarks (P/E 22.75 vs 12.31).",
+            downloadPath: "/projects/IDFC_EQR.docx",
             metrics: [
                 { label: "Market Cap", value: "₹43.8K Cr" },
                 { label: "P/E Ratio", value: "22.75" },
@@ -101,12 +103,25 @@ export const portfolioData = {
             title: "Equity Research: L&T Finance",
             subtitle: "Scenario Modeling | DCF Valuation",
             description: "Built a robust multi-scenario Discounted Cash Flow (DCF) model to determine intrinsic value for L&T Finance. Evaluated credit quality and liability mix to project sensitivity across interest rate cycles.",
+            downloadPath: "/projects/LT_Finance_EQR.pdf",
             metrics: [
                 { label: "Valuation", value: "DCF" },
                 { label: "Model Type", value: "Scenario" },
                 { label: "Sector", value: "NBFC" }
             ],
             tags: ["DCF", "Finance", "Modeling", "Risk Analysis"]
+        },
+        {
+            title: "Equity Research: NBCC India",
+            subtitle: "PSU Sector | Relative Valuation",
+            description: "Detailed analysis of NBCC India Ltd, focusing on order book execution and project management efficiency. Conducted comprehensive relative valuation against industry peers.",
+            downloadPath: "/projects/NBCC_EQR.pdf",
+            metrics: [
+                { label: "Sector", value: "PSU" },
+                { label: "Method", value: "Relative" },
+                { label: "Focus", value: "Order Book" }
+            ],
+            tags: ["PSU", "Valuation", "Infrastructure"]
         },
         {
             title: "Trading Strategy (Python MACD)",

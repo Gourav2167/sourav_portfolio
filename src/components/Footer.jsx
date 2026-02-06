@@ -17,7 +17,9 @@ const Footer = () => {
                         <div className="flex flex-wrap gap-8">
                             <ContactItem icon={<Mail size={20} />} label="Email" value={portfolioData.personalInfo.email} />
                             <ContactItem icon={<Phone size={20} />} label="Connect" value={portfolioData.personalInfo.phone} />
-                            <ContactItem icon={<Linkedin size={20} />} label="Network" value="LinkedIn Profile" />
+                            <a href={portfolioData.personalInfo.linkedin} target="_blank" rel="noopener noreferrer">
+                                <ContactItem icon={<Linkedin size={20} />} label="Network" value="LinkedIn Profile" />
+                            </a>
                         </div>
                     </div>
 
