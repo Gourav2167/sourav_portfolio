@@ -31,7 +31,7 @@ export const portfolioData = {
         },
         {
             company: "Baron Capitale & Wealth Management",
-            role: "Financial Analyst",
+            role: "Wealth Management Intern",
             location: "Bengaluru, India",
             date: "Jan 2025 - Mar 2025",
             achievements: [

@@ -7,7 +7,7 @@ const Gallery = () => {
     // These would be replaced with actual image paths provided by the user later
     const photos = [
         { id: 1, title: "The Gold Medal", description: "Official gold medal for academic excellence at Alliance University.", src: "/gallery/sourav_gold.jpeg", size: "lg" },
-        { id: 2, title: "Commemoration", description: "Sourav Singh receiving the honors for Finance Batch 2024.", src: "/gallery/sourav_with_gold.jpeg", size: "sm" }
+        { id: 2, title: "Convocation", description: "Sourav Singh receiving the honors for Finance Batch 2024.", src: "/gallery/sourav_with_gold.jpeg", size: "sm" }
     ];
 
     return (
