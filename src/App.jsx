@@ -38,7 +38,7 @@ function App() {
       <div className="portfolio-app min-h-screen bg-[var(--bg-primary)]">
         <div className="background-glow" />
         <Navbar />
-        <main className="relative z-10">
+        <main className="relative">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/gallery" element={<Gallery />} />
