@@ -4,7 +4,7 @@ import { Mail, Phone, Linkedin, MapPin } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer id="contact" className="py-24 px-6 border-t border-white/5 bg-slate-950 relative overflow-hidden">
+        <footer id="contact" className="pt-16 pb-24 px-6 border-t border-white/5 bg-slate-950 relative overflow-hidden">
             <div className="absolute bottom-0 left-0 w-full h-[300px] bg-brand-primary/5 blur-[120px] rounded-full pointer-events-none translate-y-1/2" />
 
             <div className="max-w-[1300px] mx-auto relative z-10">

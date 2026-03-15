@@ -85,7 +85,8 @@ export const portfolioData = {
                 { label: "Premium", value: "75%" },
                 { label: "Alpha", value: "22.75pp" }
             ],
-            tags: ["Bloomberg", "M&A", "ESG", "Statistics"]
+            tags: ["Bloomberg", "M&A", "ESG", "Statistics"],
+            icon: "Globe"
         },
         {
             title: "Equity Research: IDFC FIRST Bank",
@@ -97,7 +98,8 @@ export const portfolioData = {
                 { label: "P/E Ratio", value: "22.75" },
                 { label: "Coverage", value: "Banking" }
             ],
-            tags: ["Equity Research", "Valuation", "Banking", "Excel"]
+            tags: ["Equity Research", "Valuation", "Banking", "Excel"],
+            icon: "Building2"
         },
         {
             title: "Equity Research: L&T Finance",
@@ -109,7 +111,8 @@ export const portfolioData = {
                 { label: "Model Type", value: "Scenario" },
                 { label: "Sector", value: "NBFC" }
             ],
-            tags: ["DCF", "Finance", "Modeling", "Risk Analysis"]
+            tags: ["DCF", "Finance", "Modeling", "Risk Analysis"],
+            icon: "TrendingUp"
         },
         {
             title: "Equity Research: NBCC India",
@@ -121,7 +124,8 @@ export const portfolioData = {
                 { label: "Method", value: "Relative" },
                 { label: "Focus", value: "Order Book" }
             ],
-            tags: ["PSU", "Valuation", "Infrastructure"]
+            tags: ["PSU", "Valuation", "Infrastructure"],
+            icon: "Construction"
         },
         {
             title: "Trading Strategy (Python MACD)",
@@ -132,7 +136,8 @@ export const portfolioData = {
                 { label: "Alpha", value: "4.6%" },
                 { label: "Sharpe Ratio", value: "1.12" }
             ],
-            tags: ["Python", "Backtesting", "Quant", "Algo"]
+            tags: ["Python", "Backtesting", "Quant", "Algo"],
+            icon: "LineChart"
         },
         {
             title: "Business Process Analysis (McDonald's)",
@@ -143,7 +148,8 @@ export const portfolioData = {
                 { label: "Cost Savings", value: "8%" },
                 { label: "Efficiency", value: "15-20%" }
             ],
-            tags: ["Operations", "Six Sigma", "Optimization"]
+            tags: ["Operations", "Six Sigma", "Optimization"],
+            icon: "Zap"
         }
     ],
     charts: {
