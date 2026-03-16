@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { portfolioData } from '../data/portfolioData';
+import { Phone, Mail } from 'lucide-react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -38,6 +40,45 @@ const Navbar = () => {
         }
     };
 
+    const handleSaveContact = () => {
+        const { personalInfo } = portfolioData;
+        const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:${personalInfo.name}
+TEL;TYPE=CELL:${personalInfo.phone}
+EMAIL:${personalInfo.email}
+END:VCARD`;
+        
+        const blob = new Blob([vcard], { type: 'text/vcard' });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `${personalInfo.name.replace(/\s+/g, '_')}_Contact.vcf`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    // Magnetic Button Logic
+    const magX = useMotionValue(0);
+    const magY = useMotionValue(0);
+    const springX = useSpring(magX, { stiffness: 150, damping: 15 });
+    const springY = useSpring(magY, { stiffness: 150, damping: 15 });
+
+    const handleMagneticMove = (e) => {
+        const { clientX, clientY, currentTarget } = e;
+        const { left, top, width, height } = currentTarget.getBoundingClientRect();
+        const x = clientX - (left + width / 2);
+        const y = clientY - (top + height / 2);
+        magX.set(x * 0.3);
+        magY.set(y * 0.3);
+    };
+
+    const handleMagneticLeave = () => {
+        magX.set(0);
+        magY.set(0);
+    };
+
     return (
         <div className="fixed top-8 left-0 right-0 z-50 px-6 flex justify-center pointer-events-none">
             <nav className={`transition-all duration-700 glass-pill flex items-center gap-10 pointer-events-auto ${scrolled ? 'scale-95 bg-slate-950/80 shadow-2xl py-3' : 'scale-100 bg-slate-900/40 py-4'
@@ -71,12 +112,27 @@ const Navbar = () => {
                     ))}
                 </div>
 
-                <a
-                    href={`mailto:${portfolioData.personalInfo.email}?subject=${encodeURIComponent("Connecting with Sourav Singh")}&body=${encodeURIComponent("Hi Sourav nice to connect with you\n\n[Your Message]")}`}
-                    className="hidden sm:block bg-white text-black text-[10px] font-black px-6 py-3 rounded-full hover:bg-brand-secondary hover:text-white transition-all shadow-xl active:scale-95 uppercase tracking-widest"
-                >
-                    Let's Talk
-                </a>
+                <div className="flex items-center gap-4 pointer-events-auto">
+                    {/* Mobile Only Phone Icon */}
+                    <button
+                        onClick={handleSaveContact}
+                        className="md:hidden p-3 bg-white/10 hover:bg-brand-primary/20 text-white rounded-full transition-colors active:scale-90"
+                        title="Save Contact"
+                    >
+                        <Phone size={20} />
+                    </button>
+
+                    <motion.a
+                        onMouseMove={handleMagneticMove}
+                        onMouseLeave={handleMagneticLeave}
+                        style={{ x: springX, y: springY }}
+                        href={`mailto:${portfolioData.personalInfo.email}?subject=${encodeURIComponent("Connecting with Sourav Singh")}&body=${encodeURIComponent("Hi Sourav nice to connect with you\n\n[Your Message]")}`}
+                        className="hidden sm:flex items-center gap-2 bg-white text-black text-[10px] font-black px-6 py-3 rounded-full hover:bg-brand-secondary hover:text-white transition-all shadow-xl active:scale-95 uppercase tracking-widest whitespace-nowrap"
+                    >
+                        <Mail size={12} className="mb-0.5" />
+                        Let's Talk
+                    </motion.a>
+                </div>
             </nav>
         </div>
     );
