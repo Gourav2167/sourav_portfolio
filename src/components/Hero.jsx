@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 import { ArrowRight, Trophy } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import CartoonFlame from './CartoonFlame';
+import GeometricAura from './GeometricAura';
 
 const Hero = () => {
     const navigate = useNavigate();
@@ -95,9 +95,9 @@ const ProfileBlob = ({ personalInfo }) => {
             {/* 1. Underlying Soft Aura */}
             <div className="absolute inset-4 bg-blue-600/10 blur-[130px] rounded-full" />
             
-            {/* 2. Stylized Cartoon Flame */}
+            {/* 2. Stylized Geometric Aura (Unique Shape) */}
             <div className="absolute inset-0 z-0">
-                <CartoonFlame />
+                <GeometricAura />
             </div>
 
             {/* 3. The Portrait - Clean & Final */}
