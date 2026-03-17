@@ -72,7 +72,7 @@ const Hero = () => {
                 </div>
 
                 {/* Right Column: Profile Picture Layout */}
-                <div className="lg:col-span-4 mt-8 sm:mt-12 lg:mt-20 flex justify-center items-start">
+                <div className="lg:col-span-4 mt-8 sm:mt-12 lg:mt-0 flex justify-center items-start">
                     <ProfileBlob personalInfo={personalInfo} />
                 </div>
             </div>
@@ -90,7 +90,7 @@ const ProfileBlob = ({ personalInfo }) => {
                 duration: 1.2, 
                 scale: { duration: 0.6, ease: [0.23, 1, 0.32, 1] } 
             }}
-            className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[500px] aspect-square flex items-center justify-center perspective-1000 group cursor-pointer"
+            className="relative w-full max-w-[320px] sm:max-w-[400px] md:max-w-[600px] aspect-square flex items-center justify-center perspective-1000 group cursor-pointer"
         >
             {/* 1. Underlying Soft Aura */}
             <div className="absolute inset-4 bg-blue-600/10 blur-[130px] rounded-full" />
@@ -103,9 +103,9 @@ const ProfileBlob = ({ personalInfo }) => {
             {/* 3. The Portrait - Clean & Final */}
             <div 
                 style={{ 
-                    marginTop: "24%" // Lowered to nest perfectly within the cyan core's 'pocket'
+                    marginTop: "12%" // Adjusted to pull the portrait higher
                 }}
-                className="relative z-10 w-[85%] h-[85%] transform-gpu"
+                className="relative z-10 w-[95%] h-[95%] transform-gpu"
             >
                 <div 
                     className="w-full h-full relative overflow-hidden"
