@@ -202,7 +202,7 @@ const Projects = () => {
                                     </p>
 
                                     <div className="grid md:grid-cols-3 gap-16">
-                                         <div className="md:col-span-2">
+                                         <div className="md:col-span-3">
                                               <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-6 flex items-center gap-4">
                                                   <span className="w-8 h-[1px] bg-white/10" />
                                                   Project Overview
@@ -210,25 +210,6 @@ const Projects = () => {
                                               <p className="text-slate-300 text-lg leading-relaxed font-medium">
                                                   {selectedProject.description}
                                               </p>
-                                         </div>
-
-                                         <div className="md:col-span-1">
-                                              <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 mb-8 flex items-center gap-4">
-                                                  <span className="w-8 h-[1px] bg-white/10" />
-                                                  Metrics
-                                              </h4>
-                                              <div className="flex flex-col gap-10">
-                                                {selectedProject.metrics.map((metric, i) => (
-                                                    <div key={i} className="flex flex-col group/metric">
-                                                        <div className="text-white font-black text-4xl tracking-tighter group-hover/metric:text-[var(--brand-secondary)] transition-colors duration-300">
-                                                            {metric.value}
-                                                        </div>
-                                                        <div className="text-[10px] text-slate-500 font-bold uppercase tracking-widest mt-2">
-                                                            {metric.label}
-                                                        </div>
-                                                    </div>
-                                                ))}
-                                            </div>
                                          </div>
                                     </div>
                                 </div>
