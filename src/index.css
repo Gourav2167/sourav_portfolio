@@ -3,38 +3,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @theme {
-  --color-brand-primary: #3b82f6;
-  --color-brand-secondary: #60a5fa;
-  --color-bg-deep: #020617;
-  --color-bg-card: rgba(30, 41, 59, 0.4);
+  --color-brand-primary: #ffffff;
+  --color-brand-secondary: #e5e5e5;
+  --color-bg-deep: #000000;
+  --color-bg-card: rgba(15, 15, 15, 0.4);
   --color-border-glass: rgba(255, 255, 255, 0.05);
 
   --font-sans: "Outfit", "Inter", system-ui, sans-serif;
-  
-  --color-brand-primary: #3b82f6;
-  --color-brand-secondary: #60a5fa;
 }
 
 :root {
-  --brand-primary: #3b82f6;
-  --brand-secondary: #60a5fa;
-  --brand-accent: #93c5fd;
+  --brand-primary: #ffffff;
+  --brand-secondary: #e5e5e5;
+  --brand-accent: #a3a3a3;
 
-  --bg-primary: #020617;
-  --bg-secondary: #0f172a;
-  --bg-tertiary: #1e293b;
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --bg-tertiary: #171717;
 
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
+  --text-primary: #ffffff;
+  --text-secondary: #a3a3a3;
+  --text-muted: #525252;
 
   --border-radius-lg: 1.5rem;
   --border-radius-xl: 3rem;
 
-  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-bg: rgba(10, 10, 10, 0.6);
   --glass-border: rgba(255, 255, 255, 0.08);
 
-  --shadow-premium: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+  --shadow-premium: 0 20px 40px -15px rgba(255, 255, 255, 0.05);
 
   --transition-standard: 400ms cubic-bezier(0.23, 1, 0.32, 1);
 }
@@ -43,8 +40,8 @@
   body {
     @apply bg-[var(--bg-primary)] text-[var(--text-primary)] font-sans antialiased overflow-x-hidden;
     background-image:
-      radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-      radial-gradient(circle at 100% 100%, rgba(30, 58, 138, 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 0% 0%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
   }
 
   .section-padding {
@@ -115,7 +112,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.1) 0%, transparent 80%);
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.02) 0%, transparent 80%);
     pointer-events: none;
     z-index: -1;
   }
@@ -162,7 +159,7 @@
   bottom: 0;
   width: 100%;
   height: 200px;
-  background: #0f1a0f; /* Obsidian Green */
+  background: #0a0a0a; /* Obsidian */
   border-radius: 28px;
   box-shadow: 
     0 20px 50px -10px rgba(0,0,0,0.7),
@@ -175,11 +172,11 @@
   bottom: 0;
   width: 100%;
   height: 180px;
-  /* Premium Leather Texture */
+  /* Premium Industrial Texture */
   background: 
     linear-gradient(135deg, rgba(255,255,255,0.05) 0%, transparent 100%),
-    radial-gradient(circle at 50% 50%, #1a331a, #0d1a0d);
-  background-color: #1a331a;
+    radial-gradient(circle at 50% 50%, #171717, #050505);
+  background-color: #171717;
   border-radius: 12px 12px 40px 40px;
   z-index: 10;
   box-shadow: 
@@ -218,7 +215,7 @@
   box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
 }
 
-/* Metallic Clasp */
+/* Metallic Clasp (Silver/Chrome) */
 .wallet-clasp {
   position: absolute;
   top: 0;
@@ -226,7 +223,7 @@
   transform: translateX(-50%);
   width: 50px;
   height: 25px;
-  background: linear-gradient(to bottom, #d4af37, #f1c40f, #9b7e1a);
+  background: linear-gradient(to bottom, #a3a3a3, #ffffff, #525252);
   border-radius: 0 0 8px 8px;
   box-shadow: 
     0 2px 4px rgba(0,0,0,0.5),
@@ -278,10 +275,10 @@
   flex-direction: column;
 }
 
-/* Exact Identity from Image */
-.slot-3 { z-index: 7; background: #605bff !important; color: white !important; } 
-.slot-2 { z-index: 8; background: #a4e637 !important; color: #111e11 !important; } 
-.slot-1 { z-index: 9; background: #ffffff !important; color: #003087 !important; } 
+/* Industrial Monochrome Identity */
+.slot-3 { z-index: 7; background: #171717 !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.1); } 
+.slot-2 { z-index: 8; background: #262626 !important; color: #ffffff !important; border: 1px solid rgba(255,255,255,0.1); } 
+.slot-1 { z-index: 9; background: #ffffff !important; color: #000000 !important; } 
 
 .wallet-card-title {
   position: relative;
@@ -311,7 +308,7 @@
   transform: translateX(-50%);
   font-size: 16px;
   font-weight: 700;
-  color: #1a4d8c; /* Blue from image */
+  color: #a3a3a3;
   text-decoration: underline;
   cursor: pointer;
   font-style: italic;

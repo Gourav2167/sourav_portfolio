@@ -6,21 +6,21 @@ const GeometricAura = () => {
     const shapes = [
         {
             d: "M50 5 L90 30 L90 70 L50 95 L10 70 L10 30 Z", // Hexagonal Core
-            color: "#0066ff",
-            opacity: 0.2,
+            color: "#ffffff",
+            opacity: 0.15,
             duration: 15,
             direction: 1
         },
         {
             d: "M50 10 L80 40 L70 80 L30 80 L20 40 Z", // Inner Pentagonal Shard
-            color: "#00ffff",
-            opacity: 0.3,
+            color: "#a3a3a3",
+            opacity: 0.2,
             duration: 12,
             direction: -1
         },
         {
             d: "M50 0 L100 50 L50 100 L0 50 Z", // Large Diamond Overlay
-            color: "#60a5fa",
+            color: "#525252",
             opacity: 0.1,
             duration: 20,
             direction: 1
@@ -36,7 +36,7 @@ const GeometricAura = () => {
 
     return (
         <div className="absolute inset-[-40%] z-0 pointer-events-none flex items-center justify-center">
-            <svg viewBox="0 0 100 100" className="w-[140%] h-[140%] drop-shadow-[0_0_50px_rgba(0,102,255,0.3)]">
+            <svg viewBox="0 0 100 100" className="w-[140%] h-[140%] drop-shadow-[0_0_50px_rgba(255,255,255,0.1)]">
                 <defs>
                     <filter id="prismGlass" x="-50%" y="-50%" width="200%" height="200%">
                         <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
@@ -47,9 +47,9 @@ const GeometricAura = () => {
                     </filter>
                     
                     <linearGradient id="crystalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stopColor="#00ffff" stopOpacity="0.8" />
-                        <stop offset="50%" stopColor="#0066ff" stopOpacity="0.4" />
-                        <stop offset="100%" stopColor="#002266" stopOpacity="0.1" />
+                        <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
+                        <stop offset="50%" stopColor="#808080" stopOpacity="0.2" />
+                        <stop offset="100%" stopColor="#000000" stopOpacity="0.1" />
                     </linearGradient>
                 </defs>
 

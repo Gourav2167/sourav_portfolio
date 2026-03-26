@@ -93,7 +93,7 @@ const Navbar = () => {
 
     return (
         <div className="fixed top-8 left-0 right-0 z-50 px-6 flex justify-center pointer-events-none">
-            <nav className={`transition-all duration-700 glass-pill flex items-center gap-10 pointer-events-auto ${scrolled ? 'scale-95 bg-slate-950/80 shadow-2xl py-3' : 'scale-100 bg-slate-900/40 py-4'
+            <nav className={`transition-all duration-700 glass-pill flex items-center gap-10 pointer-events-auto ${scrolled ? 'scale-95 bg-black/80 shadow-[0_0_40px_rgba(255,255,255,0.05)] py-3' : 'scale-100 bg-black/40 py-4'
                 }`}>
                 <div
                     onClick={handleLogoClick}
@@ -103,11 +103,11 @@ const Navbar = () => {
                         <img
                             src="/logo-s.png"
                             alt="Logo"
-                            className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]"
+                            className="w-full h-full object-contain filter drop-shadow-[0_0_15px_rgba(255,255,255,0.2)] grayscale"
                         />
                     </div>
-                    <div className="text-xl font-black tracking-tighter text-white flex items-center gap-1.5">
-                        SOURAV <span className="text-brand-secondary">SINGH</span>
+                    <div className="text-xl font-black tracking-tighter text-white flex items-center gap-1.5 uppercase">
+                        SOURAV <span className="opacity-40">SINGH</span>
                     </div>
                 </div>
 
@@ -128,7 +128,7 @@ const Navbar = () => {
                     {/* Mobile Only Phone Icon */}
                     <button
                         onClick={handleSaveContact}
-                        className="md:hidden p-3 bg-white/10 hover:bg-brand-primary/20 text-white rounded-full transition-colors active:scale-90"
+                        className="md:hidden p-3 bg-white/5 hover:bg-white/10 text-white rounded-full transition-colors active:scale-90"
                         title="Save Contact"
                     >
                         <Phone size={20} />
@@ -139,9 +139,9 @@ const Navbar = () => {
                         onMouseLeave={handleMagneticLeave}
                         style={{ x: springX, y: springY }}
                         href={`mailto:${portfolioData.personalInfo.email}?subject=${encodeURIComponent("Connecting with Sourav Singh")}&body=${encodeURIComponent("Hi Sourav nice to connect with you\n\n[Your Message]")}`}
-                        className="hidden sm:flex items-center gap-2 bg-white text-black text-[10px] font-black px-6 py-3 rounded-full hover:bg-brand-secondary hover:text-white transition-all shadow-xl active:scale-95 uppercase tracking-widest whitespace-nowrap"
+                        className="hidden sm:flex items-center gap-3 bg-white text-black text-[10px] font-black px-8 py-3.5 rounded-full hover:bg-zinc-200 transition-all shadow-[0_10px_30px_rgba(255,255,255,0.1)] active:scale-95 uppercase tracking-[0.2em] whitespace-nowrap"
                     >
-                        <Mail size={12} className="mb-0.5" />
+                        <Mail size={14} className="mb-0.5" />
                         Let's Talk
                     </motion.a>
                 </div>
