@@ -8,7 +8,7 @@ export const portfolioData = {
         linkedin: "https://www.linkedin.com/in/sourav-singh08/",
         location: "Bengaluru, Karnataka",
         profilePhoto: "/profile-photo.png",
-        cvPath: "/Sourav_MBA_20JAN_cv.pdf"
+        cvPath: "/SOURAVs_Resume.pdf"
     },
     highlights: [
         { icon: "Trophy", title: "Gold Medalist MBA", subtitle: "9.0 CGPA - Alliance University" },

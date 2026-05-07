@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { portfolioData } from '../data/portfolioData';
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, FileText } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
 const Navbar = () => {
@@ -133,6 +133,15 @@ const Navbar = () => {
                     >
                         <Phone size={20} />
                     </button>
+
+                    <motion.a
+                        href={portfolioData.personalInfo.cvPath}
+                        download
+                        className="hidden lg:flex items-center gap-3 bg-white/5 border border-white/10 text-white text-[10px] font-black px-8 py-3.5 rounded-full hover:bg-white/10 transition-all active:scale-95 uppercase tracking-[0.2em] whitespace-nowrap"
+                    >
+                        <FileText size={14} className="mb-0.5" />
+                        Download CV
+                    </motion.a>
 
                     <motion.a
                         onMouseMove={handleMagneticMove}

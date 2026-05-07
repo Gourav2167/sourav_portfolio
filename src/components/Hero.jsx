@@ -3,10 +3,11 @@ import { motion, AnimatePresence, useSpring, useTransform } from 'framer-motion'
 import { portfolioData } from '../data/portfolioData';
 import { 
     ArrowRight, 
-    Trophy
+    Trophy,
+    Download,
+    Mail
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import GeometricAura from './GeometricAura';
 
 const Hero = () => {
     const navigate = useNavigate();
@@ -17,9 +18,7 @@ const Hero = () => {
 
     return (
         <section className="min-h-screen pt-40 pb-20 overflow-hidden relative">
-            {/* Multiplied Brand Marquee Banners */}
-            <LogoMarquee direction={1} speed={30} rotate={-6} />
-            <LogoMarquee direction={-1} speed={40} rotate={-10} />
+
 
             <div className="max-w-[1300px] mx-auto grid lg:grid-cols-12 gap-16 items-start relative z-10">
 
@@ -42,9 +41,31 @@ const Hero = () => {
                             Growth Strategy, Capital Markets, <span className="text-white">Valuations and M&A</span>
                         </h2>
 
-                        <p className="text-xl text-slate-400 mb-16 max-w-xl leading-relaxed font-medium">
+                        <p className="text-xl text-slate-400 mb-12 max-w-xl leading-relaxed font-medium">
                             {personalInfo.description}
                         </p>
+
+                        <div className="flex flex-wrap gap-6 mb-16">
+                            <motion.a
+                                whileHover={{ scale: 1.02 }}
+                                whileTap={{ scale: 0.98 }}
+                                href={`mailto:${personalInfo.email}`}
+                                className="px-10 py-5 bg-white text-black text-xs font-black uppercase tracking-[0.2em] rounded-full hover:bg-zinc-200 transition-all shadow-[0_20px_40px_rgba(255,255,255,0.1)] flex items-center gap-3"
+                            >
+                                <Mail size={18} />
+                                Get in Touch
+                            </motion.a>
+                            <motion.a
+                                whileHover={{ scale: 1.02, backgroundColor: "rgba(255,255,255,0.1)" }}
+                                whileTap={{ scale: 0.98 }}
+                                href={personalInfo.cvPath}
+                                download
+                                className="px-10 py-5 bg-white/5 border border-white/10 text-white text-xs font-black uppercase tracking-[0.2em] rounded-full transition-all flex items-center gap-3"
+                            >
+                                <Download size={18} />
+                                Download CV
+                            </motion.a>
+                        </div>
 
                         {/* Standalone Gold Medal Section */}
                         {goldMedalHighlight && (
@@ -88,50 +109,7 @@ const Hero = () => {
     );
 };
 
-const LogoMarquee = ({ direction = 1, speed = 20, rotate = -6 }) => {
-    // Repeated logos for seamless scroll
-    const logos = Array(12).fill("/logo-s.png");
 
-    return (
-        <div 
-            className="absolute w-[200%] flex items-center gap-12 py-6 overflow-hidden pointer-events-none select-none"
-            style={{ 
-                transform: `rotate(${rotate}deg) translateY(-50%)`,
-                top: direction === 1 ? '35%' : '65%',
-                backgroundColor: 'rgba(255, 255, 255, 0.01)',
-                borderBlock: '1px solid rgba(255, 255, 255, 0.03)',
-                backdropFilter: 'blur(10px)',
-                zIndex: 0
-            }}
-        >
-            <motion.div
-                animate={{ 
-                    x: direction === 1 ? ["0%", "-50%"] : ["-50%", "0%"] 
-                }}
-                transition={{
-                    duration: speed,
-                    repeat: Infinity,
-                    ease: "linear"
-                }}
-                className="flex items-center gap-12 whitespace-nowrap min-w-full"
-            >
-                {/* Double the logos for seamlessness */}
-                {[...logos, ...logos].map((src, i) => (
-                    <div key={i} className="flex items-center gap-6 opacity-20 hover:opacity-100 transition-opacity">
-                        <img 
-                            src={src} 
-                            alt="Logo" 
-                            className="w-12 h-12 md:w-16 md:h-16 object-contain grayscale brightness-[200%]"
-                        />
-                        <span className="text-2xl md:text-3xl font-black tracking-tighter text-white/5 uppercase">
-                            Sourav Portfolio
-                        </span>
-                    </div>
-                ))}
-            </motion.div>
-        </div>
-    );
-};
 
 const ProfileBlob = ({ personalInfo }) => {
     return (
