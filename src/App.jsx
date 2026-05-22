@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Gallery from './pages/Gallery';
+import FakeBrowser from './components/FakeBrowser';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -14,6 +15,8 @@ const ScrollToTop = () => {
 };
 
 function App() {
+  const [isBrowserOpen, setIsBrowserOpen] = useState(false);
+
   useEffect(() => {
     // Smooth scroll for internal links on Home page
     const handleScroll = (e) => {
@@ -37,7 +40,7 @@ function App() {
       <ScrollToTop />
       <div className="portfolio-app min-h-screen bg-[var(--bg-primary)]">
         <div className="background-glow" />
-        <Navbar />
+        <Navbar onOpenVolEdge={() => setIsBrowserOpen(true)} />
         <main className="relative">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -45,6 +48,11 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        <FakeBrowser 
+          isOpen={isBrowserOpen} 
+          onClose={() => setIsBrowserOpen(false)} 
+          url="https://stock-web-gold-five.vercel.app/" 
+        />
       </div>
     </Router>
   );

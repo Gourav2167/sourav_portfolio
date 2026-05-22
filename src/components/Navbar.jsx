@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { portfolioData } from '../data/portfolioData';
-import { Phone, Mail, FileText } from 'lucide-react';
+import { Phone, Mail, FileText, Globe } from 'lucide-react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
-const Navbar = () => {
+const Navbar = ({ onOpenVolEdge }) => {
     const [scrolled, setScrolled] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
@@ -132,6 +132,24 @@ const Navbar = () => {
                         title="Save Contact"
                     >
                         <Phone size={20} />
+                    </button>
+
+                    {/* Mobile Only VolEdge Icon */}
+                    <button
+                        onClick={onOpenVolEdge}
+                        className="md:hidden p-3 bg-white/5 hover:bg-white/10 text-white rounded-full transition-colors active:scale-90 cursor-pointer"
+                        title="Open VolEdge Sandbox"
+                    >
+                        <Globe size={20} />
+                    </button>
+
+                    {/* Desktop VolEdge Button */}
+                    <button
+                        onClick={onOpenVolEdge}
+                        className="hidden md:flex items-center gap-3 bg-white/5 border border-white/10 text-white text-[10px] font-black px-6 py-3.5 rounded-full hover:bg-white/10 hover:border-white/20 transition-all active:scale-95 uppercase tracking-[0.2em] whitespace-nowrap cursor-pointer"
+                    >
+                        <Globe size={14} className="mb-0.5" />
+                        VolEdge
                     </button>
 
                     <motion.a

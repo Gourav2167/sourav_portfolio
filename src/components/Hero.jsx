@@ -17,7 +17,7 @@ const Hero = () => {
     const goldMedalHighlight = highlights.find(h => h.title.includes("Gold Medalist"));
 
     return (
-        <section className="min-h-screen pt-40 pb-20 overflow-hidden relative">
+        <section className="min-h-screen pt-40 pb-20 px-6 sm:px-10 overflow-hidden relative">
 
 
             <div className="max-w-[1300px] mx-auto grid lg:grid-cols-12 gap-16 items-start relative z-10">
